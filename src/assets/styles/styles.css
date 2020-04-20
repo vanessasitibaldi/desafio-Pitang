@@ -1,0 +1,186 @@
+
+#app {
+    width: 100%;
+}
+header.header {
+    background-color: #111;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0px ;
+}
+header.header a {
+    color: #FFF;
+    text-decoration: none;
+}
+.header-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+figure.logo {
+    flex-grow: 3;
+}
+figure.logo img {
+    width: 179px;
+    height: 65px;
+}
+.lasted-seach {
+    flex-grow: 0.5;
+}
+
+aside {
+    width: 1000px;
+    margin: 0 auto;
+    background: #FFF;
+    box-shadow: 0 0 14px 0 rgba(0, 0,0 , 0.02);
+    border-radius: 2px;
+    padding: 30px 30px;
+    margin-top: 100px;
+}
+aside form .input-group {
+    display: flex;
+}
+aside .input-block {
+    width: 100%;
+}
+aside form .input-block input {
+    width: 750px;
+    height: 45px;
+    color: #666;
+    border: 0;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 16px;
+}
+aside form button[type=submit] {
+    width: 220px;
+    height: 45px;
+    border: 0;
+    /* margin-top: 30px; */
+    background: #111;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 19px;
+    /* font-weight: bold; */
+    box-sizing: border-box;
+    transition: background 0.5s;
+}
+aside form button[type=submit]:hover{
+    background: #333333;
+}
+aside form .type-search{
+    margin-top: 20px;
+}
+
+aside form .type-search input{
+    margin-right: 5px;
+}
+aside form .type-search label{
+    margin-right: 15px;
+}
+main {
+    flex: 1 1;
+    margin-left: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+main ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+}
+@media (max-width:650px){
+    main ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-user-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+li.info-user-wrapper{
+    background: #FFF;
+    box-shadow: 0 0 14px 0 rgba(0, 0,0 , 0.02);
+    border-radius: 2px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+li.info-user-item{
+    background: #FFF;
+    box-shadow: 0 0 14px 0 rgba(0, 0,0 , 0.02);
+    border-radius: 2px;
+    padding: 20px;
+}
+li.dev-item{
+    background: #FFF;
+    box-shadow: 0 0 14px 0 rgba(0, 0,0 , 0.02);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+li.dev-item header{
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+}
+
+li header img{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+.user-info strong{
+    display: block;
+    font-size:16px;
+    color: #333;
+}
+
+.user-info feSpecularLighting{
+    font-size:13px;
+    color: #999;
+    margin-top: 2px;
+}
+
+li.dev-item p{
+    color:#666;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+li.dev-item a{
+    color: #8E4DFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+li.dev-item a:hover{
+    color: #5a2ea5;
+
+}
+
+@media (max-width:1000px){
+    #app main{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #app{
+        flex-direction: column;
+    }
+    #app aside{
+        width: 100%;
+    }
+}
+
+
+
