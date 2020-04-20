@@ -1,41 +1,32 @@
-import React, {  useState, useEffect} from 'react';
-import {searchThunk}  from  '../core/API'
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState} from 'react';
 import '../assets/styles/styles.css';
+import {Formik , Form, Field, ErrorMessage} from 'formik';
+import * as yup from 'yup';
 
+const validation = yup.object().shape({
+  searchField: yup.string().required(),
+});
 
-function SearchRepo (){
-
-  const [userSearch , setUserSearch] = useState('');
-  const dispatch = useDispatch();
-
-  const user = useSelector(state => state.gitHubSearch);
-  console.log('user', user)
-
-  function handleForm(e){
-    e.preventDefault()
-    dispatch(searchThunk(userSearch));
-  }
-
-  return(
+const SearchRepo = ({handleSubmit}) => (
+  <Formik 
+      initialValues={{searchField: ''}} onSubmit={handleSubmit} validationSchema={validation}>
       <aside>
-          <form onSubmit={handleForm}>
+          <Form onSubmit={handleSubmit}>
             <div className="input-group">
               <div className="input-block">
-                  <input 
-                    name='searchRepo' 
-                    id='searchRepo' 
-                    required
-                    value={userSearch}
-                    onChange={e => setUserSearch(e.target.value)}
+                  <Field
+                    type="text"
+                    name='searchField' 
+                    id='searchField' 
                     placeholder={'Busca de Usuários'}
                   />
+                  <ErrorMessage className="form-error" component="span"  name="searchField"/>
               </div>
               <button type='submit'>Buscar</button>
             </div>
-          </form>
-    </aside> 
+          </Form>
+      </aside> 
+    </Formik>
   )
-}
 
 export default SearchRepo;
