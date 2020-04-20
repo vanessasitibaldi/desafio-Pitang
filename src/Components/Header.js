@@ -13,9 +13,11 @@ function Header() {
             <img src={logo} alt="gitHub search"/>
           </figure>
           <div className="lasted-seach">
-              <a href="">ATUALIZAÇÕES</a>
+              <a href="/historico">Historico de busca</a>
             </div>
-          <div className="ranking-search"> <a href="">RAKING</a> </div>
+          <div className="ranking-search">
+            <a href="/ranking">Ranking Repos</a> 
+          </div>
         </div>
       </header>
  );

@@ -1,17 +1,15 @@
 import React from 'react';
 import {searchThunk}  from  '../core/API'
-
 import Lottie from 'react-lottie';
 import SearchRepo from '../Components/SearchRepo';
 import Header from '../Components/Header';
 import ListComponent from '../Components/ListComponent';
 import InfoComponent from '../Components/InfoComponent';
-
 import * as animationData from '../assets/json/preloader.json';
 import { useSelector,useDispatch } from "react-redux";
-
 import '../assets/styles/global.css';
 import '../assets/styles/styles.css';
+
 
 function Home() {
 

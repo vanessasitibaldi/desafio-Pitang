@@ -166,7 +166,11 @@ li.dev-item a{
 }
 li.dev-item a:hover{
     color: #5a2ea5;
+}
 
+.titulo {
+    margin-bottom: 20px;
+    font-size: 19px;
 }
 
 @media (max-width:1000px){

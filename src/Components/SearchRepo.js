@@ -1,15 +1,16 @@
-import React, { useState} from 'react';
-import '../assets/styles/styles.css';
+import React from 'react';
 import {Formik , Form, Field, ErrorMessage} from 'formik';
 import * as yup from 'yup';
+import '../assets/styles/styles.css';
+
 
 const validation = yup.object().shape({
   searchField: yup.string().required(),
 });
 
 const SearchRepo = ({handleSubmit}) => (
-  <Formik 
-      initialValues={{searchField: ''}} onSubmit={handleSubmit} validationSchema={validation}>
+  
+  <Formik initialValues={{searchField: ''}} onSubmit={handleSubmit} validationSchema={validation}>
       <aside>
           <Form onSubmit={handleSubmit}>
             <div className="input-group">

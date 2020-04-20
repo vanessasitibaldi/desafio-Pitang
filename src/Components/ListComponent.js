@@ -10,7 +10,11 @@ function renderReposList(){
     if(userRepos){
         return(
             <main>
-                <span><strong>Lista de Repositórios</strong></span>
+                <div className="titulo">
+                    <span>
+                        <strong>Lista de Repositórios</strong>
+                    </span>
+                </div>
                 <ul>
                     {userRepos.map(item => (
                         <li key={item.id} className='dev-item'>
