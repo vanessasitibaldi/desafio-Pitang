@@ -19,9 +19,8 @@ const isFetching = useSelector(state => state.gitHubSearch.isFetching)
 const userRepos = useSelector(state => state.gitHubSearch.userRepos);
 const user = useSelector(state => state.gitHubSearch.payload);
 
-
-const handleSubmit = values => {
-  const search = values.target.searchField.value;
+function handleSubmit(values){
+  const search = values.searchField;
   dispatch(searchThunk(search));
 }
 
@@ -38,7 +37,7 @@ function renderSearchResult(){
     return (
       <>
       <InfoComponent user={user} />
-      <ListComponent list={userRepos} />
+      <ListComponent list={userRepos} title={'Lista de Repositórios'} />
       </>
     )
   }

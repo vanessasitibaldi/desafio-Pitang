@@ -4,7 +4,6 @@ import '../assets/styles/styles.css';
 
 function InfoComponent (props){
     const {user} = props;
-    console.log('InfoComponent',user )
 
 function renderInfosUser(){
     if(user){

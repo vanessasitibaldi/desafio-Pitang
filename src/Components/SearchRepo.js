@@ -9,10 +9,10 @@ const validation = yup.object().shape({
 });
 
 const SearchRepo = ({handleSubmit}) => (
-  
+
   <Formik initialValues={{searchField: ''}} onSubmit={handleSubmit} validationSchema={validation}>
       <aside>
-          <Form onSubmit={handleSubmit}>
+          <Form >
             <div className="input-group">
               <div className="input-block">
                   <Field

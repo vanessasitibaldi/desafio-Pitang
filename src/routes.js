@@ -1,14 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home';
+import History from './Pages/History';
+import Ranking from './Pages/Ranking';
+
 
 const Routes = () => (
     <BrowserRouter>
-    <Switch>
-        <Route exact path= "/" component={Home}/>
-        <Route  path= "/ranking" component={() => <h1>Ranking</h1>}/>
-        <Route  path= "/historico " component={() => <h1>Historico de busca</h1>}/>
-    </Switch>
+        <Switch>
+            <Route exact path= "/" component={Home}/>
+            <Route  path="/ranking" component={Ranking}/>
+            <Route  path="/historico" component={History}/>
+        </Switch>
     </BrowserRouter>
 )
 export default Routes; 
