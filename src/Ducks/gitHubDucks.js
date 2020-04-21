@@ -19,15 +19,12 @@ export const userRepos = userRepos => ({
     type: TYPES.USER_REPOS,
     userRepos
 });
-export const history = history => ({
-    type: TYPES.HISTORY_SEARCH,
-    history
-});
 
 export const isFetching = isFetching => ({
   type: TYPES.FETCH,
   isFetching
 })
+
 
 // reducers
 

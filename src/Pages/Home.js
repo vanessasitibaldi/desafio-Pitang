@@ -1,23 +1,32 @@
-import React from 'react';
+import React, {useEffect , useState} from 'react';
 import {searchThunk}  from  '../core/API'
 import Lottie from 'react-lottie';
-import SearchRepo from '../Components/SearchRepo';
+import SearchComponent from '../Components/SearchComponent';
 import Header from '../Components/Header';
 import ListComponent from '../Components/ListComponent';
 import InfoComponent from '../Components/InfoComponent';
 import * as animationData from '../assets/json/preloader.json';
 import { useSelector,useDispatch } from "react-redux";
+import {getLocalStorage} from '../Utils/Utils'
 import '../assets/styles/global.css';
 import '../assets/styles/styles.css';
 
 
 function Home() {
-
 const dispatch = useDispatch();
 
+const [userRepos, setUserRepos] = useState([]);
+const [user, setUser] = useState([]);
+
 const isFetching = useSelector(state => state.gitHubSearch.isFetching)  
-const userRepos = useSelector(state => state.gitHubSearch.userRepos);
-const user = useSelector(state => state.gitHubSearch.payload);
+
+useEffect(() => {
+  const user = getLocalStorage('user')
+  const repos = getLocalStorage('repos')
+  setUserRepos(repos);
+  setUser(user);
+},[isFetching])
+
 
 function handleSubmit(values){
   const search = values.searchField;
@@ -37,7 +46,7 @@ function renderSearchResult(){
     return (
       <>
       <InfoComponent user={user} />
-      <ListComponent list={userRepos} title={'Lista de Repositórios'} />
+      <ListComponent list={userRepos} title={'Lista de Repostórios'} />
       </>
     )
   }
@@ -46,7 +55,7 @@ function renderSearchResult(){
   return (
     <div id='app'>
       <Header />
-      <SearchRepo handleSubmit={handleSubmit}/>
+      <SearchComponent handleSubmit={handleSubmit}/>
       {renderSearchResult()}
     </div>  
  );

@@ -8,3 +8,9 @@ export function formatDate(dateList){
     const dataUpdate = `${day}-${month}-${year}`
     return dataUpdate ;
 }
+export function getLocalStorage(data){
+    const result = localStorage.getItem(data) || sessionStorage.getItem(data);
+    return JSON.parse(result)
+}
+
+

@@ -8,7 +8,7 @@ const validation = yup.object().shape({
   searchField: yup.string().required(),
 });
 
-const SearchRepo = ({handleSubmit}) => (
+const SearchComponent = ({handleSubmit}) => (
 
   <Formik initialValues={{searchField: ''}} onSubmit={handleSubmit} validationSchema={validation}>
       <aside>
@@ -30,4 +30,4 @@ const SearchRepo = ({handleSubmit}) => (
     </Formik>
   )
 
-export default SearchRepo;
+export default SearchComponent;

@@ -1,5 +1,5 @@
 import constant from './Constants';
-import {searchUsers, isFetching, userRepos}  from '../Ducks/gitHubDucks';
+import {isFetching}  from '../Ducks/gitHubDucks';
 
 let historySearch = [];
 
@@ -10,13 +10,12 @@ export function searchThunk(user){
 
     try{
       const consultUser = await constant.get(`/users/${user}`);
-      dispatch(searchUsers(consultUser.data));
-      historySearch.push(consultUser.data)
-      console.log('historySearch', historySearch)
-      sessionStorage.setItem('users',JSON.stringify(historySearch))
+      historySearch.push(consultUser.data);
+      sessionStorage.setItem('users',JSON.stringify(historySearch));
+      localStorage.setItem('user',JSON.stringify(consultUser.data));
       
       const consultRepo = await constant.get(`/users/${user}/repos?per_page=10`);
-      dispatch(userRepos(consultRepo.data));
+      await localStorage.setItem('repos',JSON.stringify(consultRepo.data))
 
       dispatch(isFetching(false));
 
