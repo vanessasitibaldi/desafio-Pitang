@@ -195,6 +195,11 @@ li.dev-item a:hover{
     margin-bottom: 20px;
     font-size: 19px;
 }
+.history-empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 115px;
+}
 
 @media (max-width:1000px){
     #app main{

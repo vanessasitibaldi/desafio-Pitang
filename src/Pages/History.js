@@ -14,11 +14,28 @@ const [searchHistory, setSearchHistory] = useState([]);
     setSearchHistory(users);
   },[])
 
+  function renderHistoryList(){
+    if(searchHistory){
+      return (
+        <div>
+          <ListComponent list={searchHistory} title={'Ultimos Usuários Pesquisados'}/>
+        </div> 
+      )
+    }else{
+      return(
+        <div className="history-empty"> 
+          <span>Não há histórico de busca no momento</span>
+        </div> 
+      )
+    }
+  }
+  
+
   return (
     <div>
-      <ListComponent list={searchHistory} title={'Ultimos Usuários Pesquisados'}/>
-    </div>  
- );
+      {renderHistoryList()}
+    </div>
+ )
 }
 
 export default History;
