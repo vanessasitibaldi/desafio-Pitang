@@ -27,6 +27,7 @@ useEffect(() => {
   setUser(user);
 },[isFetching])
 
+console.log('user', user)
 
 function handleSubmit(values){
   const search = values.searchField;

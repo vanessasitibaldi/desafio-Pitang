@@ -15,9 +15,6 @@ function Header() {
           <div className="lasted-seach">
             <a href="/historico">Historico de Busca</a>
           </div>
-          <div className="ranking-search">
-            <a href="/ranking">Ranking Repos</a> 
-          </div>
         </div>
       </header>
  );

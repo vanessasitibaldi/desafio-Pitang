@@ -9,7 +9,6 @@ const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path= "/" component={Home}/>
-            <Route  path="/ranking" component={Ranking}/>
             <Route  path="/historico" component={History}/>
         </Switch>
     </BrowserRouter>

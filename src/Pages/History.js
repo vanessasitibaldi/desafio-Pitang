@@ -11,12 +11,12 @@ const [searchHistory, setSearchHistory] = useState([]);
 
   useEffect(() => {
     const users = getLocalStorage('users');
-    setSearchHistory(users)
+    setSearchHistory(users);
   },[])
 
   return (
     <div>
-        <ListComponent list={searchHistory} title={'Ultimos Usuários Pesquisados'}/>
+      <ListComponent list={searchHistory} title={'Ultimos Usuários Pesquisados'}/>
     </div>  
  );
 }

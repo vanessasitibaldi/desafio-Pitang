@@ -13,26 +13,26 @@ function ListComponent (props){
         
         return(
             <main>
-                <div className="titulo">
-                    <span>
-                        <strong>{title}</strong>
-                    </span>
-                </div>
-                <ul>
-                    {reposLirtOrganized.map((item, index) => (
-                        <li key={index} className='dev-item'>
-                            <header>
-                                <div className="user-info">
-                                    <strong>{item.name ? item.name : item.login }</strong>
-                                </div>
-                            </header>
-                            <p>{item.language}</p>
-                            <p>{item.description}</p>
-                             <p>Data Atualização: {formatDate(item.updated_at)}</p>
-                            <a href={item.html_url}>Acessar repositorio</a>
-                        </li>
-                    ))}
-                </ul>
+            <div className="titulo">
+                <span>
+                    <strong>{title}</strong>
+                </span>
+            </div>
+            <ul>
+                {reposLirtOrganized.map((item, index) => (
+                    <li key={index} className='dev-item'>
+                        <header>
+                            <div className="user-info">
+                                <strong>{item.name ? item.name : item.login }</strong>
+                            </div>
+                        </header>
+                        <p>{item.language}</p>
+                        <p>{item.description}</p>
+                            <p>Data Atualização: {formatDate(item.updated_at)}</p>
+                        <a href={item.html_url}>Acessar repositorio</a>
+                    </li>
+                ))}
+            </ul>
         </main>
         )
     }

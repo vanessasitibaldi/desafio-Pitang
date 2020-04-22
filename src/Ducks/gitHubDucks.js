@@ -15,10 +15,7 @@ export const searchUsers = payload => ({
     payload
 });
 
-export const userRepos = userRepos => ({
-    type: TYPES.USER_REPOS,
-    userRepos
-});
+;
 
 export const isFetching = isFetching => ({
   type: TYPES.FETCH,
@@ -33,24 +30,9 @@ const initialState = {
 };
 
 export const gitHubSearch = (state = initialState, action) => {
-    const {payload,isFetching, userRepos, history} = action;
+    const {isFetching} = action;
 
     switch (action.type) {
-      case TYPES.SEARCH_USERS:
-        return {
-          ...state,
-          payload
-        };
-      case TYPES.USER_REPOS:
-        return {
-          ...state,
-          userRepos
-        };
-      case TYPES.HISTORY_SEARCH:
-        return {
-          ...state,
-          history
-        };
         case TYPES.FETCH:
         return {
           ...state,
